@@ -30,3 +30,6 @@ u = ONum(1)
 
 z = 3+(u+1)+5
 print(z, type(z))
+
+z += x
+print(z, type(z))

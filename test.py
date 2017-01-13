@@ -25,3 +25,8 @@ x += 3
 print(x, type(x))
 
 print(x+y, type(x+y))
+
+u = ONum(1)
+
+z = 3+(u+1)+5
+print(z, type(z))

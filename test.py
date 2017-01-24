@@ -64,7 +64,7 @@ class DyNum(object):
     def __float__(self):
         return float(self._valf())
     
-    def __found__(self):
+    def __round__(self):
         return round(self._valf())
 
         

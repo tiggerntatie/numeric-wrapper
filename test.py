@@ -2,12 +2,15 @@ class ONum(object):
 
     def __init__(self, *args, **kwargs):
         if len(args):
-            self._valf = lambda v = args[0]: v
+            self.update(args[0])
         else:
             self._valf = kwargs["func"]
 
     def __str__(self):
         return str(self._valf())
+        
+    def update(self, val):
+        self._valf = lambda v = val: v
     
     """    
     @property
@@ -48,6 +51,8 @@ print(x)
 print(y)
 z = x + y
 print(z)
+print(z + 3)
+print(3 + z)
 
 #print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__

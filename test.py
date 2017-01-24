@@ -10,7 +10,7 @@ class ONum(object):
     def _val(self):
         return self._valf()
         
-    @val.setter
+    @_val.setter
     def _val(self, val):
         self._valf = lambda x = val: x
     

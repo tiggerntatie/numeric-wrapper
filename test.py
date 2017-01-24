@@ -23,8 +23,7 @@ class ONum(object):
     def __iadd__(self, y):
         print("__iadd__")
         x = self + y
-        print("inside: ", x)
-        self._valf = lambda yval = y: (self + yval)._valf
+        self._valf = lambda : x._valf
 
         
 x = ONum(5)

@@ -4,7 +4,7 @@ class ONum(object):
         self._val = lambda : val
         
     def __str__(self):
-        return str(self._val)
+        return str(self._val())
         
     @property
     def val(self):
@@ -35,7 +35,10 @@ class ONum(object):
         
 x = ONum(5)
 y = ONum(3)
-print(x+3, type(x+3)) # __add__
+
+print(x)
+
+#print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__
 
 """

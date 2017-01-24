@@ -45,9 +45,9 @@ x = ONum(5)
 y = ONum(3)
 
 print(x)
-z = x + 3
+print(y)
+z = x + y
 print(z)
-
 
 #print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__

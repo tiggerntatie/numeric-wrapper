@@ -6,6 +6,7 @@ class DyNum(object):
         else:
             self._valf = kwargs["func"]
         self._prev = None
+        self._frozen = False
 
     def __str__(self):
         return str(self._valf())
@@ -15,16 +16,24 @@ class DyNum(object):
         
     @property
     def val(self):
-        self._prev = self._valf()
+        if not self._frozen:
+            self._prev = self._valf()
         return self._prev
         
     @val.setter
     def val(self, val):
         self.update(val)
+        self._prev = self._valf()
         
     @property 
     def prev(self):
         return self._prev
+
+    def freeze(self, frozen=True):
+        self._frozen = frozen
+        
+    def thaw(self):
+        self.freeze(False)
 
     # ADD    
     def __add__(self, y):

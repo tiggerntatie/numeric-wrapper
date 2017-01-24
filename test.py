@@ -22,6 +22,8 @@ class ONum(object):
 
     def __iadd__(self, y):
         print("__iadd__")
+        x = self + yval
+        print("inside: ", x)
         self._valf = lambda yval = y: (self + yval)._valf
 
         
@@ -31,6 +33,7 @@ y = ONum(3)
 #x = x + 1
 #print(x)
 
+print(x)
 x += 1
 print(x)
 

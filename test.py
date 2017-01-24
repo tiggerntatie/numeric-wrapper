@@ -13,7 +13,8 @@ class ONum(object):
     @val.setter
     def val(self, val):
         self._val = lambda : val
-        
+    
+    """    
     def __add__(self, y):
         #print("__add__")
         self._val = lambda s = self, v = y : ONum(s.val + v)
@@ -28,14 +29,14 @@ class ONum(object):
         #print("__iadd__")
         self.val += y
         return self
-
+    """
 
         
         
 x = ONum(5)
 y = ONum(3)
 print(x+3, type(x+3)) # __add__
-print(3+x, type(3+x)) # __radd__
+#print(3+x, type(3+x)) # __radd__
 
 """
 x += 3  # __iadd__

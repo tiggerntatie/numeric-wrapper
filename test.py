@@ -1,7 +1,7 @@
 class ONum(object):
 
     def __init__(self, val):
-        self._valf = lambda : val
+        self._valf = lambda v = val: v
         
     def __str__(self):
         return str(self._valf())

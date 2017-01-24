@@ -22,8 +22,7 @@ class ONum(object):
 
     def __iadd__(self, y):
         print("__iadd__")
-        x = self + y
-        self._valf = lambda xval=x: xval._valf
+        self.update(self._valf() + y)
 
         
 x = ONum(5)
@@ -32,9 +31,11 @@ y = ONum(3)
 #x = x + 1
 #print(x)
 
-print(x)
+print(x, id(x))
 x += 1
-print(x)
+print(x, id(x))
+x += 2
+print(x, id(x))
 
 #print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__

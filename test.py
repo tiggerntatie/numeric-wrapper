@@ -1,8 +1,8 @@
 class ONum(object):
 
-    def __init__(self, val):
-        self._valf = lambda v = val: v
-        
+    def __init__(self, *args, **kwargs):
+        self._valf = kwargs.get('func', lambda v = args[0]: v)
+
     def __str__(self):
         return str(self._valf())
     
@@ -18,10 +18,9 @@ class ONum(object):
     """
     def __add__(self, y):
         print("__add__")
-        self._valf = lambda s = self, v = y : ONum(s._valf() + v)
-        return self._valf()
-        
-    """    
+        return ONum(lambda s=self, yval=y: s._valf() + yval)
+
+    """
     def __radd__(self, x):
         #print("__radd__")
         self._val = lambda s = self, v = x : ONum(x + s.val)
@@ -39,12 +38,9 @@ x = ONum(5)
 y = ONum(3)
 
 print(x)
-print(x._val)
+z = x + 3
+print(z)
 
-print(type(x+3))
-print(x)
-print(x+3)
-print(x)
 
 #print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__

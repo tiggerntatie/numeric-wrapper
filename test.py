@@ -1,4 +1,4 @@
-class ONum(object):
+class DyNum(object):
 
     def __init__(self, *args, **kwargs):
         if len(args):
@@ -11,46 +11,34 @@ class ONum(object):
         
     def update(self, val):
         self._valf = lambda v = val: v
-    
+
+    # ADD    
     def __add__(self, y):
-        print("__add__")
-        return ONum(func = lambda s=self, yval=y: s._valf() + yval)
+        return DyNum(func = lambda s=self, yval=y: s._valf() + yval)
 
     def __radd__(self, x):
-        print("__radd__")
-        return ONum(func = lambda s=self, xval=x: xval + s._valf())
+        return DyNum(func = lambda s=self, xval=x: xval + s._valf())
 
     def __iadd__(self, y):
-        print("__iadd__")
+        self.update(self._valf() + y)
+    # SUB 
+    def __sub__(self, y):
+        return DyNum(func = lambda s=self, yval=y: s._valf() - yval)
+
+    def __rsub__(self, x):
+        return DyNum(func = lambda s=self, xval=x: xval - s._valf())
+
+    def __isub__(self, y):
         self.update(self._valf() + y)
 
+
         
-x = ONum(5)
-y = ONum(3)
+x = DyNum(5)
+y = DyNum(3)
 
-a = x + y
-b = a + x
-c = b + x
-print(c)
-x.update(6)
-print(c)
 
-#print(x+3, type(x+3)) # __add__
-#print(3+x, type(3+x)) # __radd__
-
-"""
-x += 3  # __iadd__
-print(x, type(x))
-
-print(x+y, type(x+y)) # __add__ __radd__
-
-u = ONum(1)
-
-z = 3+(u+1)+5 # add, radd, add, radd, add
-print(z, type(z))
-
-print(id(z))
-z += x # iadd, radd
-print(z, type(z))
-print(id(z))
-"""
+print(x-y)
+print(y-x)
+print(x)
+x -= 33
+print(x)

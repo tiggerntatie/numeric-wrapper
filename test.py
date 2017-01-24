@@ -5,7 +5,8 @@ class ONum(object):
         
     def __str__(self):
         return str(self._valf())
-        
+    
+    """    
     @property
     def _val(self):
         return self._valf()
@@ -14,9 +15,10 @@ class ONum(object):
     def _val(self, val):
         self._valf = lambda x = val: x
     
+    """
     def __add__(self, y):
-        #print("__add__")
-        self._val = lambda s = self, v = y : ONum(s._val + v)
+        print("__add__")
+        self._valf = lambda s = self, v = y : ONum(s._valf() + v)
         return self._valf()
         
     """    
@@ -40,7 +42,9 @@ print(x)
 print(x._val)
 
 print(type(x+3))
+print(x)
 print(x+3)
+print(x)
 
 #print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__

@@ -1,18 +1,18 @@
 class ONum(object):
 
     def __init__(self, val):
-        self._val = lambda : val
+        self._valf = lambda : val
         
     def __str__(self):
-        return str(self._val())
+        return str(self._valf())
         
     @property
-    def val(self):
-        return self._val()
+    def _val(self):
+        return self._valf()
         
     @val.setter
-    def val(self, val):
-        self._val = lambda : val
+    def _val(self, val):
+        self._valf = lambda x = val: x
     
     """    
     def __add__(self, y):

@@ -80,5 +80,3 @@ print(z)
 xx = DyNum(z)
 print(xx)
 
-for cc in range(DyNum(0), DyNum(5)):
-    print(cc)

@@ -29,7 +29,7 @@ class DyNum(object):
         return DyNum(func = lambda s=self, xval=x: xval - s._valf())
 
     def __isub__(self, y):
-        self.update(self._valf() + y)
+        self.update(self._valf() - y)
 
 
         

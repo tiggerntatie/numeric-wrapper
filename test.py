@@ -22,7 +22,7 @@ class ONum(object):
 
     def __iadd__(self, y):
         print("__iadd__")
-        self._valf() = lambda yval = y: self._valf() + yval
+        self._valf = lambda yval = y: (self + yval)._valf
 
         
 x = ONum(5)

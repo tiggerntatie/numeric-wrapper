@@ -23,6 +23,10 @@ class ONum(object):
         print("__add__")
         return ONum(func = lambda s=self, yval=y: s._valf() + yval)
 
+    def __radd__(self, x):
+        print("__radd__")
+        return ONum(func = lambda s=self, xval=x: xval + s._valf())
+
     """
     def __radd__(self, x):
         #print("__radd__")

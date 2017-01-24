@@ -12,16 +12,6 @@ class ONum(object):
     def update(self, val):
         self._valf = lambda v = val: v
     
-    """    
-    @property
-    def _val(self):
-        return self._valf()
-        
-    @_val.setter
-    def _val(self, val):
-        self._valf = lambda x = val: x
-    
-    """
     def __add__(self, y):
         print("__add__")
         return ONum(func = lambda s=self, yval=y: s._valf() + yval)
@@ -30,29 +20,19 @@ class ONum(object):
         print("__radd__")
         return ONum(func = lambda s=self, xval=x: xval + s._valf())
 
-    """
-    def __radd__(self, x):
-        #print("__radd__")
-        self._val = lambda s = self, v = x : ONum(x + s.val)
-        return self.val
-        
     def __iadd__(self, y):
-        #print("__iadd__")
-        self.val += y
-        return self
-    """
+        print("__iadd__")
+        self._valf() = lambda yval = y: self._valf() + yval
 
-        
         
 x = ONum(5)
 y = ONum(3)
 
+#x = x + 1
+#print(x)
+
+x += 1
 print(x)
-print(y)
-z = x + y
-print(z)
-print(z + 3)
-print(3 + z)
 
 #print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__

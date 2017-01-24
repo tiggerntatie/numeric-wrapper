@@ -30,6 +30,35 @@ class DyNum(object):
 
     def __isub__(self, y):
         self.update(self._valf() - y)
+    # MUL 
+    def __mul__(self, y):
+        return DyNum(func = lambda s=self, yval=y: s._valf() * yval)
+
+    def __rmul__(self, x):
+        return DyNum(func = lambda s=self, xval=x: xval * s._valf())
+
+    def __imul__(self, y):
+        self.update(self._valf() * y)
+    # TRUEDIV 
+    def __truediv__(self, y):
+        return DyNum(func = lambda s=self, yval=y: s._valf() / yval)
+
+    def __rtruediv__(self, x):
+        return DyNum(func = lambda s=self, xval=x: xval / s._valf())
+
+    def __itruediv__(self, y):
+        self.update(self._valf() / y)
+    # POW
+    def __pow__(self, y):
+        return DyNum(func = lambda s=self, yval=y: s._valf() ** yval)
+
+    def __rpow__(self, x):
+        return DyNum(func = lambda s=self, xval=x: xval ** s._valf())
+
+    def __ipow__(self, y):
+        self.update(self._valf() ** y)
+        
+    
 
 
         

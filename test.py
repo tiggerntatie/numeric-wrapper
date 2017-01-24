@@ -71,12 +71,11 @@ class DyNum(object):
 x = DyNum(5)
 y = DyNum(3)
 
-z = x + 3*y + x**2
-print(float(z))
-print(int(z))
-print(round(z))
-x.update(2)
-print(z)
-xx = DyNum(z)
-print(xx)
+a = x + y
+b = x * y
+c = x / y
+d = x - y
 
+print(a, b, c, d)
+x.update(55)
+print(a, b, c, d)

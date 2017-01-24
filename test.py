@@ -57,6 +57,10 @@ class DyNum(object):
 
     def __ipow__(self, y):
         self.update(self._valf() ** y)
+    # CONVERSIONS
+    def __int__(self):
+        return int(self._valf())
+        
         
     
 
@@ -65,9 +69,11 @@ class DyNum(object):
 x = DyNum(5)
 y = DyNum(3)
 
-
-print(x-y)
-print(y-x)
-print(x)
-x -= 33
-print(x)
+print(x * y)
+print(x / y)
+print(x ** y)
+print(x * 10)
+print(10 * x)
+print(x ** 4)
+print(4 ** x)
+print(int(x))

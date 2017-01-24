@@ -72,6 +72,13 @@ x = DyNum(5)
 y = DyNum(3)
 
 z = x + 3*y + x**2
-print(float(x))
-print(int(x))
-print(round(x))
+print(float(z))
+print(int(z))
+print(round(z))
+x.update(2)
+print(z)
+xx = DyNum(z)
+print(xx)
+
+for cc in range(DyNum(0), DyNum(5)):
+    print(cc)

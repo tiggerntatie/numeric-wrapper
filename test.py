@@ -18,7 +18,7 @@ class ONum(object):
     """
     def __add__(self, y):
         print("__add__")
-        return ONum(lambda s=self, yval=y: s._valf() + yval)
+        return ONum(func = lambda s=self, yval=y: s._valf() + yval)
 
     """
     def __radd__(self, x):

@@ -61,7 +61,8 @@ class DyNum(object):
     def __int__(self):
         return int(self._valf())
         
-        
+    def __float__(self):
+        return float(self._valf())
     
 
 
@@ -69,11 +70,7 @@ class DyNum(object):
 x = DyNum(5)
 y = DyNum(3)
 
-print(x * y)
-print(x / y)
-print(x ** y)
-print(x * 10)
-print(10 * x)
-print(x ** 4)
-print(4 ** x)
+z = x + 3*y + x**2
+print(float(x))
 print(int(x))
+print(round(x))

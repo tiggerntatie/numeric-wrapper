@@ -28,14 +28,14 @@ class ONum(object):
 x = ONum(5)
 y = ONum(3)
 
-#x = x + 1
-#print(x)
-
-print(x, id(x))
-x += 1
-print(x, id(x))
-x += 2
-print(x, id(x))
+z = x + y
+print(z)
+x.update(55)
+print(z)
+z += 1
+print(z)
+x.update(555)
+print(z)
 
 #print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__

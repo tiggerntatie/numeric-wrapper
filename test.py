@@ -16,8 +16,8 @@ class ONum(object):
     
     def __add__(self, y):
         #print("__add__")
-        self._val = lambda s = self, v = y : ONum(s.val + v)
-        return self.val
+        self._val = lambda s = self, v = y : ONum(s._val + v)
+        return self._valf()
         
     """    
     def __radd__(self, x):
@@ -38,6 +38,9 @@ y = ONum(3)
 
 print(x)
 print(x._val)
+
+print(type(x+3))
+print(x+3)
 
 #print(x+3, type(x+3)) # __add__
 #print(3+x, type(3+x)) # __radd__

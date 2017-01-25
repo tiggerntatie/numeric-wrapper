@@ -1,6 +1,6 @@
-import math, numeric
+import math, numbers
 
-class DyNum(numeric.Numeric):
+class DyNum(numbers.Number):
 
     def __init__(self, *args, **kwargs):
         if len(args):

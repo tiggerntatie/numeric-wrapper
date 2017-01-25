@@ -11,7 +11,7 @@ class DyNum(numbers.Number):
         self._frozen = False
 
     def __str__(self):
-        return str(self._valf())
+        return float(self._valf())
         
     def update(self, val):
         self._valf = lambda v = val: v

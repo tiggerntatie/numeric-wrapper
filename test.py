@@ -1,6 +1,6 @@
 import math, numbers
 
-class DyNum(numbers.Number):
+class DyNum(float):
 
     def __init__(self, *args, **kwargs):
         if len(args):

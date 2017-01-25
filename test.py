@@ -104,3 +104,5 @@ d = x - y
 print(a, b, c, d)
 x.update(55)
 print(a, b, c, d)
+
+print(math.sin(a))

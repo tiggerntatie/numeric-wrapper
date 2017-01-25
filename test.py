@@ -11,7 +11,7 @@ class DyNum(numbers.Number):
         self._frozen = False
 
     def __str__(self):
-        return float(self._valf())
+        return str(self._valf())
         
     def update(self, val):
         self._valf = lambda v = val: v
@@ -104,5 +104,5 @@ d = x - y
 print(a, b, c, d)
 x.update(55)
 print(a, b, c, d)
-print(math.sin(float(a.val)))
+print(math.sin(float(a)))
 print(math.sin(58))
